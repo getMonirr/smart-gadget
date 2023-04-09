@@ -17,3 +17,13 @@ export const getStoredCart = () => {
     const storedCart = JSON.parse(localStorage.getItem('shopping-g-cart')) || {};
     return storedCart;
 }
+
+// remove item by id from local storage
+
+export const removeProduct = (id) => {
+    const storedCart = getStoredCart();
+    if (id in storedCart) {
+        delete storedCart[id];
+        localStorage.setItem('shopping-g-cart', JSON.stringify(storedCart));
+    }
+}
