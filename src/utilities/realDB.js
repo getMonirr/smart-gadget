@@ -27,3 +27,8 @@ export const removeProduct = (id) => {
         localStorage.setItem('shopping-g-cart', JSON.stringify(storedCart));
     }
 }
+
+// remove from db
+export const clearCart = () => {
+    localStorage.removeItem('shopping-g-cart');
+}

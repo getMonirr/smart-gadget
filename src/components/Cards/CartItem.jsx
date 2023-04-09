@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { CartContext } from "../../App";
 import { removeProduct } from "../../utilities/realDB";
+import { toast } from "react-hot-toast";
 
 const CartItem = ({ product }) => {
   const [cart, setCart] = useContext(CartContext);
@@ -12,6 +13,7 @@ const CartItem = ({ product }) => {
     const rest = cart.filter((pd) => pd.id !== id);
     setCart([...rest]);
     removeProduct(id);
+    toast.error("Product remote 🔥");
   };
 
   return (

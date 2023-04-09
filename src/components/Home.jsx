@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import heroImg from '../assets/hero.jpg'
+import GButton from './GButton'
 
 const Home = () => {
   return (
@@ -16,14 +17,14 @@ const Home = () => {
           </p>
           <div className='flex flex-wrap justify-center'>
             <Link to='/shop'>
-              <button type='button' className='btn-primary'>
+              <GButton type='button' className='btn-primary'>
                 Shop Now
-              </button>
+              </GButton>
             </Link>
             <Link to='/about'>
-              <button type='button' className='btn-outlined'>
+              <GButton type='button' className='btn-outlined'>
                 Learn more
-              </button>
+              </GButton>
             </Link>
           </div>
         </div>
