@@ -13,7 +13,7 @@ const CartItem = ({ product }) => {
     const rest = cart.filter((pd) => pd.id !== id);
     setCart([...rest]);
     removeProduct(id);
-    toast.error("Product remote 🔥");
+    toast.error("Product remove 🔥");
   };
 
   return (
