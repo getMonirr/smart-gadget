@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import { Outlet, useLoaderData } from "react-router-dom";
@@ -16,12 +16,14 @@ const App = () => {
   let [isOpen, setIsOpen] = useState(false);
 
   // session storage
-  const controlSession = sessionStorage.getItem("hasCart");
+  useEffect(() => {
+    const controlSession = sessionStorage.getItem("hasCart");
 
-  if (cart.length > 0 && controlSession !== "true") {
-    setIsOpen(true);
-    sessionStorage.setItem("hasCart", "true");
-  }
+    if (cart.length > 0 && controlSession !== "true") {
+      setIsOpen(true);
+      sessionStorage.setItem("hasCart", "true");
+    }
+  }, []);
   return (
     <ProductContext.Provider value={products}>
       <CartContext.Provider value={[cart, setCart]}>
