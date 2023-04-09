@@ -19,7 +19,6 @@ export const cartAndProductLoader = async () => {
             newCart.push(exist);
         }
     }
-    console.log(products);
     return { newCart, products };
 
 }
